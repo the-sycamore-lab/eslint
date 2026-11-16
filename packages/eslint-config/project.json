@@ -1,0 +1,13 @@
+{
+  "projectType": "library",
+  "sourceRoot": "packages/eslint-config/src",
+  "targets": {
+    "check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "eslint -c src/index.js --print-config foo.ts"
+      }
+    }
+  }
+}
