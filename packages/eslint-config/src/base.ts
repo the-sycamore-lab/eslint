@@ -1,6 +1,7 @@
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-export default [
+export default defineConfig([
   {
     name: "sycamore/base",
     languageOptions: {
@@ -15,4 +16,4 @@ export default [
       "@typescript-eslint": tseslint.plugin,
     },
   },
-];
+]);

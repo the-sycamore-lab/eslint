@@ -3,3 +3,6 @@ node_modules
 # Nx
 .nx/cache
 .nx/workspace-data
+
+# Build output
+dist

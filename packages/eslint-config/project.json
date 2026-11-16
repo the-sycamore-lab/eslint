@@ -2,12 +2,25 @@
   "projectType": "library",
   "sourceRoot": "packages/eslint-config/src",
   "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "tsc -p ."
+      }
+    },
     "check": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "eslint -c src/index.js --print-config foo.ts"
-      }
+        "command": "eslint -c dist/index.js --print-config foo.ts"
+      },
+      "dependsOn": [
+        "build"
+      ]
     }
   }
 }

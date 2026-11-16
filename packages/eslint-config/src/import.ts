@@ -1,8 +1,9 @@
+import { defineConfig } from "eslint/config";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import importX from "eslint-plugin-import-x";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 
-export default [
+export default defineConfig([
   importX.flatConfigs.recommended,
   importX.flatConfigs.typescript,
   {
@@ -37,4 +38,4 @@ export default [
       "import-x/no-default-export": "off",
     },
   },
-];
+]);

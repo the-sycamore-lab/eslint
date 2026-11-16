@@ -2,7 +2,8 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": [
-      "{projectRoot}/**/*"
+      "{projectRoot}/**/*",
+      "!{projectRoot}/dist/**/*"
     ],
     "production": [
       "default"
@@ -14,6 +15,16 @@
       "inputs": [
         "default",
         "^production"
+      ]
+    },
+    "build": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
       ]
     }
   },
