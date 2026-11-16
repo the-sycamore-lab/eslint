@@ -1,27 +1,12 @@
 {
-  "name": "eslint-config-sycamore",
-  "main": "src/index.js",
-  "scripts": {
-    "check": "eslint -c src/index.js --print-config foo.ts"
-  },
-  "peerDependencies": {
-    "eslint": "^10.0.0"
-  },
-  "dependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.17.1",
-    "eslint-plugin-simple-import-sort": "^14.0.0",
-    "typescript-eslint": "^8.71.2"
-  },
-  "devDependencies": {
-    "eslint": "^10.12.0",
-    "typescript": "~6.0.0"
-  },
+  "name": "@sycamore/eslint",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "exports": "./src/index.js",
-  "files": [
-    "src"
-  ]
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "nx": "24.0.3"
+  }
 }
