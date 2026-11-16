@@ -1,0 +1,42 @@
+name: Publish
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'Run in dry-run mode (no actual publishing)'
+        required: false
+        default: false
+        type: boolean
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    environment: main
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: npm ci
+        shell: bash
+      - name: Verify code correctness
+        run: npx nx run-many --target check
+        shell: bash
+      - name: Publish packages
+        run: npx nx release publish ${{ inputs.dry-run && '--dry-run' || '' }}
+        shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

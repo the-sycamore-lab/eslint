@@ -1,31 +1,28 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "!{projectRoot}/dist/**/*"
-    ],
-    "production": [
-      "default"
-    ]
+    "default": ["{projectRoot}/**/*", "!{projectRoot}/dist/**/*"],
+    "production": ["default"]
   },
   "targetDefaults": {
     "check": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "build": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ],
-      "outputs": [
-        "{projectRoot}/dist"
-      ]
+      "inputs": ["default", "^production"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "nx-release-publish": {
+      "dependsOn": ["build"]
+    }
+  },
+  "release": {
+    "projects": ["packages/*"],
+    "projectsRelationship": "independent",
+    "version": {
+      "preVersionCommand": "npx nx run-many -t check build"
     }
   },
   "analytics": false

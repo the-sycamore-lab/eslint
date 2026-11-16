@@ -2,6 +2,15 @@
   "name": "@sycamore-lab/eslint-config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-sycamore-lab/eslint.git",
+    "directory": "packages/eslint-config"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "eslint": "^10.0.0"
   },
