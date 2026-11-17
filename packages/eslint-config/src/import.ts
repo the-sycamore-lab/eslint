@@ -3,6 +3,8 @@ import { createTypeScriptImportResolver } from "eslint-import-resolver-typescrip
 import importX from "eslint-plugin-import-x";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 
+import { installedPackages } from "./installed-packages.js";
+
 export default defineConfig([
   importX.flatConfigs.recommended,
   importX.flatConfigs.typescript,
@@ -24,7 +26,10 @@ export default defineConfig([
       "import-x/no-absolute-path": ["error"],
       "import-x/no-cycle": ["error"],
       "import-x/no-dynamic-require": ["error"],
-      "import-x/no-internal-modules": ["error"],
+      "import-x/no-internal-modules": [
+        "error",
+        { allow: [...installedPackages] },
+      ],
       "import-x/consistent-type-specifier-style": ["error"],
       "import-x/extensions": ["error", "never", { json: "always" }],
       "import-x/first": ["error"],

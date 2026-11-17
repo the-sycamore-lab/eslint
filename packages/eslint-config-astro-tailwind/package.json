@@ -1,0 +1,38 @@
+{
+  "name": "@sycamore-lab/eslint-config-astro-tailwind",
+  "version": "0.1.0",
+  "description": "ESLint config for the Tailwind CSS classes in Astro projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-sycamore-lab/eslint.git",
+    "directory": "packages/eslint-config-astro-tailwind"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "eslint": "^10.12.0"
+  },
+  "dependencies": {
+    "eslint-plugin-tailwindcss": "^4.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0",
+    "typescript": "~6.0.0"
+  }
+}

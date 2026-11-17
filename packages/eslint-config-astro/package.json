@@ -1,0 +1,41 @@
+{
+  "name": "@sycamore-lab/eslint-config-astro",
+  "version": "0.1.0",
+  "description": "ESLint config for packages and client projects built with Astro.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-sycamore-lab/eslint.git",
+    "directory": "packages/eslint-config-astro"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@sycamore-lab/eslint-config": "^0.2.0",
+    "eslint": "^10.12.0"
+  },
+  "dependencies": {
+    "eslint-plugin-astro": "^3.2.1",
+    "globals": "^17.13.0"
+  },
+  "devDependencies": {
+    "@sycamore-lab/eslint-config": "^0.1.0",
+    "eslint": "^10.12.0",
+    "typescript": "~6.0.0"
+  }
+}

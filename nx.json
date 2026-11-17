@@ -7,10 +7,12 @@
   "targetDefaults": {
     "check": {
       "cache": true,
+      "dependsOn": ["^build"],
       "inputs": ["default", "^production"]
     },
     "build": {
       "cache": true,
+      "dependsOn": ["^build"],
       "inputs": ["default", "^production"],
       "outputs": ["{projectRoot}/dist"]
     },

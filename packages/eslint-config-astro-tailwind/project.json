@@ -1,0 +1,21 @@
+{
+  "projectType": "library",
+  "sourceRoot": "packages/eslint-config-astro-tailwind/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/dist"],
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "tsc -p ."
+      }
+    },
+    "check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "tsc --noEmit"
+      }
+    }
+  }
+}
