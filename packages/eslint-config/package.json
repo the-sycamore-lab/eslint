@@ -2,7 +2,7 @@
   "name": "@sycamore-lab/eslint-config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-sycamore-lab/eslint.git",

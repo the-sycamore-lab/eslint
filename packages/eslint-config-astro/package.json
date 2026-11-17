@@ -26,7 +26,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "@sycamore-lab/eslint-config": "^0.2.0",
+    "@sycamore-lab/eslint-config": "^0.1.1",
     "eslint": "^10.12.0"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "globals": "^17.13.0"
   },
   "devDependencies": {
-    "@sycamore-lab/eslint-config": "^0.1.0",
+    "@sycamore-lab/eslint-config": "^0.1.1",
     "eslint": "^10.12.0",
     "typescript": "~6.0.0"
   }
