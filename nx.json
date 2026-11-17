@@ -24,7 +24,8 @@
     "projects": ["packages/*"],
     "projectsRelationship": "independent",
     "version": {
-      "preVersionCommand": "npx nx run-many -t check build"
+      "preVersionCommand": "npx nx run-many -t check build",
+      "preserveMatchingDependencyRanges": false
     }
   },
   "analytics": false
